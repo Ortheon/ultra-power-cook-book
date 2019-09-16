@@ -17,6 +17,8 @@ import {MatButtonModule, MatCheckboxModule, MatIconModule, MatMenuModule} from '
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {RecipeService} from './shared/recipe.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
+import {DropdownDirective} from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     RecipeInfoComponent,
     ShoppingListComponent,
     EditComponent,
+    RecipeStartComponent,
+    DropdownDirective,
   ],
   imports: [
     BrowserModule,
