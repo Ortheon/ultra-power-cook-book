@@ -19,6 +19,7 @@ import {RecipeService} from './shared/recipe.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
 import {DropdownDirective} from './shared/dropdown.directive';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,9 @@ import {DropdownDirective} from './shared/dropdown.directive';
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
 
   ],
   providers: [RecipeService],

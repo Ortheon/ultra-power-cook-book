@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-xs-10">
+    <!--<app-edit></app-edit>-->
+    <hr>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingredient of ingredients">
+        {{ingredient.name}}
+        <div class="pull-right">
+          {{ingredient.amount}} {{ingredient.amountUnit}}
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-10">
+    <div class="pull-right">
+      <div class="btn btn-success">Edit list</div>
+      <div class="btn btn-danger">Clear list</div>
+      <div class="btn btn-primary">To PDF</div>
+    </div>
+  </div>
+</div>
