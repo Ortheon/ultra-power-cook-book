@@ -20,6 +20,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
 import {DropdownDirective} from './shared/dropdown.directive';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AuthenticationComponent} from './authentication/authentication.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     EditComponent,
     RecipeStartComponent,
     DropdownDirective,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [RecipeService],
