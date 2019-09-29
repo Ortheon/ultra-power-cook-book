@@ -39,7 +39,9 @@
   <span class="example-fill-remaining-space"></span>
   <span><button mat-button [matMenuTriggerFor]="menu">Menu</button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item routerLink="/authentication">Authenticate</button>
+  <button mat-menu-item routerLink="/login">Login</button>
+  <button mat-menu-item (click)="logout()">Logout</button>
+  <button mat-menu-item routerLink="/signup">Create New Account</button>
 </mat-menu>
 </span>
 </mat-toolbar>

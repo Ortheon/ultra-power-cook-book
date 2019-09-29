@@ -1,12 +1,14 @@
 <a class="list-group-item clearfix" [routerLink]="index">
-  <div class="pull-left">
-    <h4 class="list-group-item-heading">{{recipe.name}} </h4>
-    <ngb-rating [rate]="recipe.stars" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
-    <p class="list-group-item-text">{{recipe.description}}</p>
-  </div>
-  <span class="pull-right">
-        <img [src]="recipe.imagePath" alt="{{recipe.name}}" class="img-responsive" style="max-height: 7rem;">
-      </span>
+  <span class="col-xs-12">
+    <span class="col-xs-8">
+       <h4 class="list-group-item-heading">{{recipe.name}} </h4>
+      <ngb-rating [rate]="recipe.stars" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+      <p class="list-group-item-text">{{recipe.description}}</p>
+    </span>
+    <span class="col-xs-4">
+      <img [src]="recipe.imagePath" alt="{{recipe.name}}" class="img-responsive" style="max-height: 10rem;">
+    </span>
+  </span>
 </a>
 <!--Hearts-->
 <ng-template #t let-fill="fill">

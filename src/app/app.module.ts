@@ -20,9 +20,16 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
 import {DropdownDirective} from './shared/dropdown.directive';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {AuthenticationComponent} from './authentication/authentication.component';
-import {HttpClientModule} from '@angular/common/http';
-
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './authentication/login/login.component';
+import { SignupComponent } from './authentication/signup/signup.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import {AuthenticationGuard} from './authentication/authentication.guard';
+// function that will retrieve the token
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +44,9 @@ import {HttpClientModule} from '@angular/common/http';
     EditComponent,
     RecipeStartComponent,
     DropdownDirective,
-    AuthenticationComponent
+    LoginComponent,
+    SignupComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,10 +60,17 @@ import {HttpClientModule} from '@angular/common/http';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:5000'],
+        blacklistedRoutes: ['localhost:5000/api/auth']
+      }
+    }),
 
   ],
-  providers: [RecipeService],
+  providers: [RecipeService, AuthenticationGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

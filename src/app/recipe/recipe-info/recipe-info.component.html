@@ -16,7 +16,7 @@
           <ul class="dropdown-menu">
             <li><a (click)="onAddIngredientsToShoppingList()" >Add Ingredients to your shopping list</a></li>
             <li><a (click)="onEditRecipe()">Edit recipe</a></li>
-            <li><a >Delete recipe</a></li>
+            <li><a (click)="onDeleteRecipe(recipe.id)">Delete recipe</a></li>
           </ul>
         </div>
         <hr style="visibility: hidden">
